@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /pagination/
+
+RewriteRule ^seo/page-(.*)/ seo.php?p=$1 [L]
+RewriteRule ^seo/ seo.php [L]
