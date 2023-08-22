@@ -22,7 +22,7 @@ class Pagination
 		$this->max_items 	= $max_items;
 
 		# Set the page as a number, bypassing GET
-		$this->page = (!empty($page) && ($page <= $this->pages()) && is_numeric($page)) ? $page : 1;
+		$this->page = (!empty($page) && ($page <= $this->pages()) && is_numeric($page) && $page>0 ) ? $page : 1;
 	}
 	
 	/**
@@ -56,7 +56,7 @@ class Pagination
 	public function start()
 	{
 		# Computers Calculate From 0 thus, page1 must start results from 0
-		$start = $this->page - 1;
+		$start = abs($this->page - 1);
 		
 		# Calculate Our Starting Point (0x6=0(start from 0, page1), 1x6=6(start from 6, page2), etc)
 		$calc = $start*$this->max;
