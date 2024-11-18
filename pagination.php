@@ -5,6 +5,8 @@
 class Pagination
 {
 	public $max, $total, $value, $start = 0;
+	public $page = 1;
+	public $max_items = 10;
 	public $url, $theme = '../themes/default';
 	public $i = 0;
 	
